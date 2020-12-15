@@ -12,6 +12,7 @@ function SideBar(props) {
                 <Li>Baby & Kids</Li>
                 <Li>Clothing & Shoes</Li>
                 <Li>Auto Parts</Li>
+                <Li>Auto Parts</Li>
             </SideBarMenu>
         </SideBarMenuContainer>
     )
