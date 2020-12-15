@@ -4,7 +4,8 @@ import S from 'styled-components';
 import {Link} from 'react-router-dom';
 import { useScrollPosition } from '../../custom_hooks/useScrollPosition';
 import PrimaryButton from '../../reused_components/PrimaryButton';
-// import {ReactComponent as Logo} from '../../Images/2020_logo.svg';
+import {ReactComponent as Logo} from '../../logo.svg';
+import SearchForm from '../../reused_components/SearchForm';
 
 const DesktopMenu = (props) => {
 
@@ -28,10 +29,11 @@ const DesktopMenu = (props) => {
         <MenuContainer style={{...headerStyle}}>
             <MenuContainerInner>
                 <LogoContainer>
-                    {/* <StyledLink to="/">
+                    <StyledLink to="/">
                         <StyledLogo></StyledLogo>
-                    </StyledLink> */}
+                    </StyledLink>
                 </LogoContainer>
+                <SearchForm/>
                 <MenuItemsWrapper>
                     <MenuItems>
                         <StyledLink to="/projects">Home</StyledLink>
@@ -171,10 +173,10 @@ const Login = S(PrimaryButton)`
 
     }
 `;
-// const StyledLogo = S(Logo)`
-//     width: 170px;
+const StyledLogo = S(Logo)`
+    width: 100px;
 
-//     @media (max-width: 520px) {
-//         width: 130px;
-//     }
-// `;
+    @media (max-width: 520px) {
+        width: 100px;
+    }
+`;
