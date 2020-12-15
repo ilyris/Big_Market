@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import S from 'styled-components';
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import Footer from './components/footer/Footer';
+import ScrollToTop from './ScrollToTop';
+import DesktopMenu from './components/menus/DesktopMenu'
+import HomePage from './components/home_page/HomePage'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+       <DesktopMenu  />
+       <ScrollToTop />
+        <ComponentWrapper>
+          {/* <MobileMenu /> */}
+          <Switch>
+            <Route exact path="/" component={HomePage}/>
+            {/* <Route exact path="/projects" component={Projects}/>
+            <Route exact path="/services" component={ServicePage}/>
+            <Route exact path="/services/:id" component={IndividualServicePage}/>
+            <Route exact path="/reviews" component={Testimonials}/>
+            <Route exact path="/project/:id" component={IndividualProjectPage}/> */}
+          </Switch>
+        </ComponentWrapper>
+        <Footer />
+    </Router>
   );
 }
 
 export default App;
+ 
+const ComponentWrapper = S.main`
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
